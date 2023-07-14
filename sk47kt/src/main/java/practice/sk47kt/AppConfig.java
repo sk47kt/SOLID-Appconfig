@@ -2,6 +2,7 @@ package practice.sk47kt;
 
 import practice.sk47kt.discount.DiscountPolicy;
 import practice.sk47kt.discount.FixDiscountPolicy;
+import practice.sk47kt.discount.RateDiscountPolicy;
 import practice.sk47kt.member.MemberService;
 import practice.sk47kt.member.MemberServiceImpl;
 import practice.sk47kt.member.MemoryMemberRepository;
@@ -23,7 +24,7 @@ public class AppConfig {
     }
 
     public DiscountPolicy discountPolicy(){
-        return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
     }
     
 }
