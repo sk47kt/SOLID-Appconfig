@@ -1,11 +1,13 @@
 package practice.sk47kt;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.stereotype.Component;
 import practice.sk47kt.member.MemberRepository;
 import practice.sk47kt.member.MemberServiceImpl;
+import practice.sk47kt.member.MemoryMemberRepository;
 
 @Configuration
 @ComponentScan(
@@ -13,6 +15,9 @@ import practice.sk47kt.member.MemberServiceImpl;
         basePackages = "practice.sk47kt.member",
         basePackageClasses = AutoAppconfig.class
 ) //다른 예제코드 @Configuration 제외
-public class AutoAppconfig{
-
+public class AutoAppconfig {
+    @Bean(name = "memoryMemberRepository")
+    MemberRepository memberRepository(){
+        return new MemoryMemberRepository();
+    }
 }
