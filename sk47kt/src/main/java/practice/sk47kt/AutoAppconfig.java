@@ -16,8 +16,8 @@ import practice.sk47kt.member.MemoryMemberRepository;
         basePackageClasses = AutoAppconfig.class
 ) //다른 예제코드 @Configuration 제외
 public class AutoAppconfig {
-    @Bean(name = "memoryMemberRepository")
+    /*@Bean(name = "memoryMemberRepository")
     MemberRepository memberRepository(){
         return new MemoryMemberRepository();
-    }
+    }*/
 }
