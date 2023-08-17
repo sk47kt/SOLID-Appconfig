@@ -1,5 +1,6 @@
 package practice.sk47kt.order;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import practice.sk47kt.discount.DiscountPolicy;
@@ -10,25 +11,12 @@ import practice.sk47kt.member.MemberRepository;
 import practice.sk47kt.member.MemoryMemberRepository;
 
 @Component
+@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    //setter
-    /*@Autowired
-    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
-        this.discountPolicy = discountPolicy;
-    }
-    @Autowired
-    public void setMemberRepository(MemberRepository memberRepository) {
-        this.memberRepository = memberRepository;
-    }*/
 
-    @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
-    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
