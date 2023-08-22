@@ -10,6 +10,7 @@ import practice.sk47kt.member.Member;
 
 import java.util.Optional;
 
+
 public class AutowiredTest {
 
     @Test

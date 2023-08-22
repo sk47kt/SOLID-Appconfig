@@ -8,6 +8,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.stereotype.Service;
 import practice.sk47kt.AutoAppconfig;
 import practice.sk47kt.discount.DiscountPolicy;
+import practice.sk47kt.discount.DiscountPolicyConfig;
 import practice.sk47kt.member.Grade;
 import practice.sk47kt.member.Member;
 
@@ -20,7 +21,7 @@ public class AllBeanTest {
 
     @Test
     void findAllBean(){
-        ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppconfig.class , DiscountService.class);
+        ApplicationContext ac = new AnnotationConfigApplicationContext(DiscountPolicyConfig.class, DiscountService.class);
 
         DiscountService discountService = ac.getBean(DiscountService.class);
         Member userA = new Member(1L, "userA", Grade.VIP);
