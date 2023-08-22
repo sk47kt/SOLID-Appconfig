@@ -8,7 +8,6 @@ import practice.sk47kt.member.Grade;
 import practice.sk47kt.member.Member;
 
 @Component
-@MainDiscountPolicy
 public class RateDiscountPolicy implements DiscountPolicy {
 
     private int discountPercent = 10;

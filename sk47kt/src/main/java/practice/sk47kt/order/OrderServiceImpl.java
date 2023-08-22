@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import practice.sk47kt.annotation.MainDiscountPolicy;
 import practice.sk47kt.discount.DiscountPolicy;
 import practice.sk47kt.discount.FixDiscountPolicy;
@@ -12,12 +13,12 @@ import practice.sk47kt.member.Member;
 import practice.sk47kt.member.MemberRepository;
 import practice.sk47kt.member.MemoryMemberRepository;
 
-@Component
+//@Component
 public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }

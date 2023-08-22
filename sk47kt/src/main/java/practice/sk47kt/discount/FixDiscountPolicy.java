@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import practice.sk47kt.member.Grade;
 import practice.sk47kt.member.Member;
 
-@Component()
+@Component
 public class FixDiscountPolicy implements DiscountPolicy {
 
     private int discountFixAmount=1000;
